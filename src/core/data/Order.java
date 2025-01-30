@@ -6,7 +6,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import core.services.Client;
+import core.interfaces.ClientInterface;
+import core.services.ClientService;
 import estorePojo.exceptions.UnknownItemException;
 
 public class Order {
@@ -17,7 +18,7 @@ public class Order {
 	/** The index of this order. */
 	private int num;
 
-	private Client client;
+	private ClientInterface client;
 	private Object item;
 	private String address;
 	private String bankAccountRef;
@@ -42,7 +43,7 @@ public class Order {
 		date = new Date();
 	}
 
-	public Order(Client client, String address, String bankAccountRef) {
+	public Order(ClientInterface client, String address, String bankAccountRef) {
 		this();
 		this.client = client;
 		this.address = address;
